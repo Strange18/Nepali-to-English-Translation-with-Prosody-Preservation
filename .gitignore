@@ -107,3 +107,6 @@ bin/
 *.pt
 *.safetensors
 *.onnx
+
+env/
+
