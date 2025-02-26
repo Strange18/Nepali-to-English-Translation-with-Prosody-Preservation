@@ -44,7 +44,9 @@ if uploaded_file is not None:
                     st.write("Translated To English:")
                     st.write(generated_translation)
                     
-                    output_audio_path = text_to_audio_synthesis(generated_translation)
+                    # output_audio_path = text_to_audio_synthesis(generated_translation)
+                    output_audio_path = text_to_audio_synthesis(generated_transcription, generated_translation, temp_file_path)
+                    # output_audio_path = "output.wav"
                     st.write("Normal Generated Speech")
                     st.audio(output_audio_path, format="audio/wav")
 
