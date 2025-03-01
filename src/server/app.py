@@ -2,6 +2,7 @@ from audio_transcription import transcribe_audio_file
 from text_translation import translate_nepali_to_english
 from audio_synthesis import text_to_audio_synthesis
 
+import requests
 import streamlit as st
 import tempfile
 import jiwer
@@ -36,19 +37,34 @@ if uploaded_file is not None:
         if st.button("Generate English Audio"):
             with st.spinner("Processing..."):
                 try:
-                    generated_transcription = transcribe_audio_file(temp_file_path)
+                    api_url = "https://8000-01jn43ebh87qgh1nckz11tq51j.cloudspaces.litng.ai/transcribe"  # Update with your actual API URL
+                    generated_transcription = transcribe_audio_file(api_url, temp_file_path)
                     st.write("Nepali Transcription of the Audio:")
                     st.write(generated_transcription)
                     
-                    generated_translation = translate_nepali_to_english(generated_transcription)
+                    api_url = "https://8000-01jn43ebh87qgh1nckz11tq51j.cloudspaces.litng.ai/translate"
+                    generated_translation = translate_nepali_to_english(api_url, generated_transcription)
                     st.write("Translated To English:")
                     st.write(generated_translation)
                     
-                    # output_audio_path = text_to_audio_synthesis(generated_translation)
-                    output_audio_path = text_to_audio_synthesis(generated_transcription, generated_translation, temp_file_path)
+                    generated_translation = f"...................{generated_translation}.........."
+
+                    # API parameters
+                    api_url = "https://8000-01jn43ebh87qgh1nckz11tq51j.cloudspaces.litng.ai/tts"
+                    output_audio_path = "output.wav"
+
+                    # Call API for text-to-speech synthesis
+                    audio_file_generated = text_to_audio_synthesis(api_url, generated_transcription, generated_translation, temp_file_path, output_audio_path)
+
+                    if audio_file_generated:
+                        st.write("Generated English Speech:")
+                        st.audio(audio_file_generated, format="audio/wav")
+
+                    # # output_audio_path = text_to_audio_synthesis(generated_translation)
+                    # output_audio_path = text_to_audio_synthesis(generated_transcription, generated_translation, temp_file_path)
                     # output_audio_path = "output.wav"
-                    st.write("Normal Generated Speech")
-                    st.audio(output_audio_path, format="audio/wav")
+                    # st.write("Normal Generated Speech")
+                    # st.audio(output_audio_path, format="audio/wav")
 
                     with st.expander("Show Evaluation Metrics"):
                         st.header("Metrics")
