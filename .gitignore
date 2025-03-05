@@ -110,3 +110,4 @@ bin/
 
 env/
 venv/
+.env
