@@ -16,9 +16,9 @@ def add_punctuation(sentence: str) -> str:
     prompt = (
         "You are an AI that trasnalates Nepali sentences into English sentences. "
         "Your task is to take a Nepali sentence and return "
-        "a properly translated english sentence without punctuations. "
+        "a properly translated english sentence without punctuations and make all words in lowercase. "
         "Ensure the sentence seems natural and is suitable for text-to-speech (TTS) processing. "
-        "Return ONLY the corrected sentence without any explanations and punctuations.\n\n"
+        "Return ONLY the corrected sentence without any explanations and punctuations and keep words in lowercase.\n\n"
         f"Input: {sentence}\n"
         "Output:"
     )

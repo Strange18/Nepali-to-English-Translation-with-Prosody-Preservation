@@ -15,7 +15,7 @@ from st_audiorec import st_audiorec
 st.set_page_config(
     page_title="Home",
 )
-st.title("Nepali-to-English Emotion Transfer in Audio")
+st.title("Nepali-to-English Translation with Prosody Preservation")
 
 
 tab1, tab2 = st.tabs(["Upload Audio File", "Record Audio"])
