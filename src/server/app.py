@@ -79,9 +79,7 @@ if temp_file_path is not None:
                     st.write("Translated To English:")
                     st.write(generated_translation)
 
-                    generated_translation = (
-                        f"...................{generated_translation}.........."
-                    )
+                    generated_translation = f".....{generated_translation}....."
 
                     # API parameters
                     api_url = "https://8000-01jn43ebh87qgh1nckz11tq51j.cloudspaces.litng.ai/tts"
