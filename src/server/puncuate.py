@@ -12,7 +12,7 @@ def setup_gemini_api(api_key: str):
 
 def add_punctuation(sentence: str) -> str:
     """Send a sentence to Gemini API and get a properly punctuated response."""
-    model = genai.GenerativeModel("gemini-1.5-flash-002")
+    model = genai.GenerativeModel("gemini-2.0-flash")
     prompt = (
         "You are an AI that trasnalates Nepali sentences into English sentences. "
         "Your task is to take a Nepali sentence and return "
