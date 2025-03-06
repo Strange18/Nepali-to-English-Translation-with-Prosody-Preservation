@@ -9,7 +9,7 @@ import jiwer
 from nltk.translate.bleu_score import sentence_bleu
 from sacrebleu import corpus_bleu
 from rouge_score import rouge_scorer
-from puncuate import main
+from puncuate import translation, punctuate
 from st_audiorec import st_audiorec
 
 st.set_page_config(
@@ -75,9 +75,11 @@ if temp_file_path is not None:
                     #     api_url, generated_transcription
                     # )
 
-                    generated_translation = main(generated_transcription)
+                    generated_translation = translation(generated_transcription)
                     st.write("Translated To English:")
                     st.write(generated_translation)
+
+                    generated_translation = punctuate(generated_translation)
 
                     generated_translation = f".....{generated_translation}....."
 
