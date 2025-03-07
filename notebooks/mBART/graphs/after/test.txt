@@ -1,0 +1,13 @@
+{'eval_test_loss': 0.08557490259408951,
+ 'eval_test_sacrebleu': 40.83654497247312,
+ 'eval_test_bleu': 0.4083654497247309,
+ 'eval_test_rouge1': 0.6917071622794422,
+ 'eval_test_rouge2': 0.48681577480734156,
+ 'eval_test_rougeL': 0.6654677382342387,
+ 'eval_test_rougeLsum': 0.6662194635822889,
+ 'eval_test_ter': 41.75504618542593,
+ 'eval_test_runtime': 147.7453,
+ 'eval_test_samples_per_second': 3.066,
+ 'eval_test_steps_per_second': 0.772,
+ 'epoch': 3.1696113074204946}
+}
