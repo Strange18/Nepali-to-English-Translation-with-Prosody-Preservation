@@ -77,7 +77,7 @@ if temp_file_path is not None:
 
                     # generated_translation = translation(generated_transcription)
                     # st.write("Translated To English:")
-                    # st.write(generated_translation)
+                    st.write(generated_translation)
 
                     # generated_translation = punctuate(generated_translation)
 
