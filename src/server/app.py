@@ -70,18 +70,18 @@ if temp_file_path is not None:
                     st.write("Nepali Transcription of the Audio:")
                     st.write(generated_transcription)
 
-                    # api_url = "https://8000-01jn43ebh87qgh1nckz11tq51j.cloudspaces.litng.ai/translate"
-                    # generated_translation = translate_nepali_to_english(
-                    #     api_url, generated_transcription
-                    # )
+                    api_url = "https://8000-01jn43ebh87qgh1nckz11tq51j.cloudspaces.litng.ai/translate"
+                    generated_translation = translate_nepali_to_english(
+                        api_url, generated_transcription
+                    )
 
-                    generated_translation = translation(generated_transcription)
-                    st.write("Translated To English:")
-                    st.write(generated_translation)
+                    # generated_translation = translation(generated_transcription)
+                    # st.write("Translated To English:")
+                    # st.write(generated_translation)
 
-                    generated_translation = punctuate(generated_translation)
+                    # generated_translation = punctuate(generated_translation)
 
-                    generated_translation = f".....{generated_translation}....."
+                    # generated_translation = f".....{generated_translation}....."
 
                     # API parameters
                     api_url = "https://8000-01jn43ebh87qgh1nckz11tq51j.cloudspaces.litng.ai/tts"
