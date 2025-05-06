@@ -1,0 +1,3 @@
+English POS Tag Distribution: Counter({'NOUN': 5080, 'DET': 2249, 'ADP': 2193, 'ADJ': 2190, 'VERB': 2082, 'PRON': 1096, 'AUX': 918, 'ADV': 764, 'CCONJ': 609, 'PART': 302, 'PROPN': 213, 'SCONJ': 193, 'INTJ': 10, 'NUM': 8, 'X': 4})
+ 
+ Tok 45 minutes for English only

@@ -109,4 +109,5 @@ bin/
 *.onnx
 
 env/
-
+venv/
+.env
