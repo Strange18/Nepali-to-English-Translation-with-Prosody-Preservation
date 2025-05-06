@@ -64,20 +64,29 @@ if temp_file_path is not None:
             with st.spinner("Processing..."):
                 try:
                     api_url = "https://8000-01jn43ebh87qgh1nckz11tq51j.cloudspaces.litng.ai/transcribe"  # Update with your actual API URL
-                    generated_transcription = transcribe_audio_file(
+                    generated_transcriptions = transcribe_audio_file(
                         api_url, temp_file_path
+                    )
+                    generated_transcription, transcription_time_taken = (
+                        generated_transcriptions["transcription"],
+                        generated_transcriptions["time_taken"],
                     )
                     st.write("Nepali Transcription of the Audio:")
                     st.write(generated_transcription)
+                    st.write(f"The time taken is {transcription_time_taken}")
 
                     api_url = "https://8000-01jn43ebh87qgh1nckz11tq51j.cloudspaces.litng.ai/translate"
-                    generated_translation = translate_nepali_to_english(
+                    generated_translations = translate_nepali_to_english(
                         api_url, generated_transcription
                     )
+
+                    generated_translation = generated_translations["transcriptions"]
+                    translation_time_taken = generated_translations["time_taken"]
 
                     # generated_translation = translation(generated_transcription)
                     # st.write("Translated To English:")
                     st.write(generated_translation)
+                    st.write(f"The time taken is {translation_time_taken}")
 
                     # generated_translation = punctuate(generated_translation)
 
